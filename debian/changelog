@@ -1,3 +1,14 @@
+wlroots (0.15.1-5) unstable; urgency=medium
+
+  * [764e4e9] Cherry pick two upstream fixes.
+    Add seat-Allow-to-cancel-touches.patch: make sure touch gestures get cancelled
+    Add wlr_output_layout_contains_point-handle-outputs-that-aren.patch:
+    Avoid crash when an output is not part of the given layout
+    This helps on mobile devices.
+  * d/gbp.conf: Switch to bookworm
+
+ -- Guido Günther <agx@sigxcpu.org>  Mon, 20 Feb 2023 12:36:16 +0100
+
 wlroots (0.15.1-4) unstable; urgency=medium
 
   * [df38414] Move upstream patches to d/patches/upstream.
