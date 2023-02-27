@@ -1,3 +1,11 @@
+wlroots (0.15.1-6) unstable; urgency=medium
+
+  * [101ea4a] Bump shlibs version.
+    We introduce a new function (that is contained in newer wlroots) so bump
+    the version to create a strict enough dependency.
+
+ -- Guido Günther <agx@sigxcpu.org>  Mon, 27 Feb 2023 12:43:10 +0100
+
 wlroots (0.15.1-5) unstable; urgency=medium
 
   * [764e4e9] Cherry pick two upstream fixes.
