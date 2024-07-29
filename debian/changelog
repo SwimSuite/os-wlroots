@@ -1,3 +1,9 @@
+wlroots (0.18.0-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+
+ -- Guido Günther <agx@sigxcpu.org>  Mon, 29 Jul 2024 08:59:28 +0200
+
 wlroots (0.17.4-1) unstable; urgency=medium
 
   * New upstream release
