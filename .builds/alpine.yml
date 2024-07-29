@@ -1,8 +1,8 @@
 image: alpine/edge
 packages:
   - eudev-dev
-  - ffmpeg-dev
   - glslang
+  - lcms2-dev
   - libdisplay-info-dev
   - libinput-dev
   - libliftoff-dev
@@ -25,14 +25,14 @@ sources:
 tasks:
   - setup: |
       cd wlroots
-      meson setup build --fatal-meson-warnings --default-library=both -Dauto_features=enabled -Dxcb-errors=disabled
+      meson setup build --fatal-meson-warnings --default-library=both -Dauto_features=enabled -Dxcb-errors=disabled --buildtype=debugoptimized
   - build: |
       cd wlroots
       ninja -C build
       sudo ninja -C build install
   - build-features-disabled: |
       cd wlroots
-      meson build --reconfigure -Dauto_features=disabled
+      meson setup build --reconfigure -Dauto_features=disabled
       ninja -C build
   - tinywl: |
       cd wlroots/tinywl

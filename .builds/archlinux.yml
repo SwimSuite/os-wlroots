@@ -1,7 +1,7 @@
 image: archlinux
 packages:
   - clang
-  - ffmpeg
+  - lcms2
   - libinput
   - libdisplay-info
   - libliftoff
@@ -27,18 +27,18 @@ tasks:
   - setup: |
       cd wlroots
       CC=gcc meson setup build-gcc --fatal-meson-warnings --default-library=both -Dauto_features=enabled --prefix /usr -Db_sanitize=address,undefined
-      CC=clang meson setup build-clang --fatal-meson-warnings -Dauto_features=enabled
+      CC=clang meson setup build-clang --fatal-meson-warnings -Dauto_features=enabled -Dc_std=c11
   - gcc: |
       cd wlroots/build-gcc
       ninja
       sudo ninja install
       cd ../tinywl
-      CFLAGS="-fsanitize=address,undefined -fno-omit-frame-pointer" make
+      make
   - clang: |
       cd wlroots/build-clang
       ninja
   - smoke-test: |
-      cd wlroots/tinywl
+      cd wlroots/build-gcc/tinywl
       sudo modprobe vkms
       udevadm settle
       export WLR_BACKENDS=drm
