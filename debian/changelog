@@ -1,8 +1,19 @@
-wlroots (0.18.0-1) UNRELEASED; urgency=medium
+wlroots (0.18.0-1) experimental; urgency=medium
 
+  * Upload to experimental
   * New upstream release
+  * [4225a2a] Rediff patches
+  * [c188450] gitignore generated files
+  * [89eb3b2] debian: Add wlroots version to package names.
+    Upstream now allows for parallel installation by encoding the API
+    version in the library name.
+  * [f996e82] tests: Run against 0.18
+  * [7c36c90] d/control: Bump libwayland and libdrm dependencies
+  * [a867c99] d/copyright: Update and sort.
+    Sort file list alphabetically, put recent dates first, use shared
+    license text for CC0-1.0.
 
- -- Guido Günther <agx@sigxcpu.org>  Mon, 29 Jul 2024 08:59:28 +0200
+ -- Guido Günther <agx@sigxcpu.org>  Mon, 29 Jul 2024 11:26:23 +0200
 
 wlroots (0.17.4-1) unstable; urgency=medium
 
