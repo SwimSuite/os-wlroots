@@ -48,13 +48,13 @@ Vcs-Git: https://salsa.debian.org/swaywm-team/wlroots.git
 Vcs-Browser: https://salsa.debian.org/swaywm-team/wlroots
 Rules-Requires-Root: no
 
-Package: libwlroots-dev
+Package: libwlroots-0.17-dev
 Section: libdevel
 Architecture: any
 Multi-Arch: same
 Depends:
  ${misc:Depends},
- libwlroots12 (= ${binary:Version}),
+ libwlroots-0.17 (= ${binary:Version}),
  libcap-dev,
  libdisplay-info-dev,
  libdrm-dev (>= 2.4.114),
@@ -91,7 +91,7 @@ Description: Modular wayland compositor library - development headers
  .
  This package contains the development headers.
 
-Package: libwlroots12
+Package: libwlroots-0.17
 Architecture: any
 Multi-Arch: same
 Depends:
@@ -103,7 +103,7 @@ Description: Modular wayland compositor library - shared library
  .
  This package contains the shared library.
 
-Package: libwlroots-examples
+Package: libwlroots-0.17-examples
 Architecture: any
 Depends:
  ${misc:Depends},

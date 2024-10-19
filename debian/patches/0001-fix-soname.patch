@@ -1,0 +1,33 @@
+diff --git a/meson.build b/meson.build
+index 117b5007..d4af3399 100644
+--- a/meson.build
++++ b/meson.build
+@@ -11,11 +11,10 @@ project(
+ 	],
+ )
+ 
+-# When doing a major or minor release, *always* increase soversion. This isn't
+-# necessary for bugfix releases. Increasing soversion is required because
+-# wlroots never guarantees ABI stability -- only API stability is guaranteed
+-# between minor releases.
+-soversion = 12
++version = meson.project_version().split('-')[0]
++version_major = version.split('.')[0]
++version_minor = version.split('.')[1]
++versioned_name = '@0@-@1@.@2@'.format(meson.project_name(), version_major, version_minor)
+ 
+ little_endian = target_machine.endian() == 'little'
+ big_endian = target_machine.endian() == 'big'
+@@ -173,8 +172,7 @@ wlr_inc = include_directories('include')
+ symbols_file = 'wlroots.syms'
+ symbols_flag = '-Wl,--version-script,@0@/@1@'.format(meson.current_source_dir(), symbols_file)
+ lib_wlr = library(
+-	meson.project_name(), wlr_files,
+-	soversion: soversion.to_string(),
++	versioned_name, wlr_files,
+ 	dependencies: wlr_deps,
+ 	include_directories: [wlr_inc],
+ 	install: true,
+-- 
+2.45.1
+

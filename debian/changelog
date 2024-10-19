@@ -1,6 +1,7 @@
 wlroots (0.17.4-1+ss24u1) swimsuite; urgency=medium
 
   * Revert 64-bit time_t transition rename
+  * Fix package naming
 
  -- Huw Jones <huw@swimsuite.co.uk>  Sat, 19 Oct 2024 16:49:24 +0000
 
